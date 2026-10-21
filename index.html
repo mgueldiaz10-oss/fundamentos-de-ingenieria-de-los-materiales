@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Polímeros: Estructura, Termodinámica y Cinética | Callister 4.1 - 4.4</title>
+  
+  <!-- Google Fonts: Playfair Display, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- KaTeX for High-Fidelity Mathematical Typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  
+  <!-- Harvard Minimalist Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="app-header">
+    <div class="progress-bar-container">
+      <div id="progress-bar" class="progress-bar-fill"></div>
+    </div>
+    
+    <div class="brand-wrapper">
+      <button id="btn-toc" class="btn-icon" title="Tabla de Contenidos">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <span>Índice</span>
+      </button>
+      <div class="brand-badge">IQ • Callister</div>
+      <div class="brand-title">
+        Polímeros
+        <span class="brand-subtitle">| Módulo 1: Subtemas 4.1 a 4.4</span>
+      </div>
+    </div>
+
+    <div class="header-controls">
+      <button id="btn-mode-toggle" class="btn-icon" title="Alternar entre diapositivas y lectura continua">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span class="mode-label">Modo Lectura</span>
+      </button>
+      <button id="btn-fullscreen" class="btn-icon" title="Pantalla Completa (F)">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar Drawer: Table of Contents -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <aside id="toc-drawer" class="toc-drawer">
+    <div class="drawer-header">
+      <div class="drawer-title">Tabla de Diapositivas</div>
+      <button id="btn-close-drawer" class="btn-close-drawer">&times;</button>
+    </div>
+    <nav id="toc-list" class="drawer-content"></nav>
+  </aside>
+
+  <!-- Main Slide Presentation Area -->
+  <main class="presentation-container">
+    <div id="slide-deck" class="slide-deck">
+
+      <!-- SLIDE 1: PORTADA -->
+      <article class="slide-card active" data-slide="1">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Ciencia e Ingeniería de Materiales</span>
+          <span class="slide-ref">Callister • Capítulo 4</span>
+        </div>
+        <h1 class="slide-title" style="font-size: 32px; margin-top: 20px;">Estructuras Poliméricas & Fundamentos Moleculares</h1>
+        <p class="slide-subtitle" style="font-size: 16px;">Módulo 1: Introducción, Hidrocarburos, Macromoléculas y Química de Polimerización (Subtemas 4.1 a 4.4)</p>
+        
+        <div class="callout-box crimson" style="margin-top: 15px;">
+          <div class="callout-title">Enfoque Académico Riguroso para Ingeniería Química</div>
+          Este compendio interactivo conecta el contenido clásico de <b>W.D. Callister</b> con los pilares formativos de la Ingeniería Química: <b>termodinámica molecular</b> (Gibbs, Flory-Huggins, Hildebrand), <b>mecánica cuántica del enlace</b> ($sp^3$ vs $sp^2$), <b>cinética de reactores</b> (QSSA radicalaria y Carothers) y <b>reología de procesos</b>.
+        </div>
+
+        <div class="grid-two-cols" style="margin-top: 25px;">
+          <div class="callout-box">
+            <div class="callout-title">Contenido del Módulo 1</div>
+            <ul class="academic-list">
+              <li><b>4.1 Introducción:</b> Naturaleza macromolecular y dualidad de enlace.</li>
+              <li><b>4.2 Hidrocarburos:</b> Hibridación orbital, saturación y solubilidad de Hildebrand.</li>
+              <li><b>4.3 Moléculas de Polímeros:</b> Esqueleto en zig-zag y estados conformacionales.</li>
+              <li><b>4.4 Química de Polimerización:</b> Cinética QSSA, Carothers y punto de gel.</li>
+            </ul>
+          </div>
+
+          <div class="callout-box navy">
+            <div class="callout-title">Navegación & Controles</div>
+            <p style="font-size: 13.5px; margin-bottom: 8px;">• <b>En móvil:</b> Desliza horizontalmente (Swipe) para avanzar o retroceder.</p>
+            <p style="font-size: 13.5px; margin-bottom: 8px;">• <b>En PC:</b> Usa las teclas <kbd>←</kbd> <kbd>→</kbd> o <kbd>Espacio</kbd>.</p>
+            <p style="font-size: 13.5px; margin-bottom: 8px;">• <b>Modo Estudio:</b> Pulsa "Modo Lectura" arriba para ver todo en scroll continuo.</p>
+            <p style="font-size: 13.5px;">• <b>Figuras del Callister:</b> Toca cualquier gráfica para abrir el zoom en alta resolución.</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 2: 4.1 INTRODUCCIÓN -->
+      <article class="slide-card" data-slide="2">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.1</span>
+          <span class="slide-ref">Callister págs. 124–125</span>
+        </div>
+        <h2 class="slide-title">4.1 Introducción a las Macromoléculas y Evolución de Materiales</h2>
+        <p class="slide-subtitle">La transición de polímeros naturales a macromoléculas petroquímicas en la ingeniería de procesos</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div>
+              <p style="margin-bottom: 12px;">Históricamente, los procesos químicos dependieron de biopolímeros (madera, caucho natural, algodón, lana, celulosa). La síntesis de macromoléculas a partir de derivados petroquímicos tras la Segunda Guerra Mundial transformó la industria:</p>
+              
+              <ul class="academic-list">
+                <li><b>Polidispersidad Intrínseca:</b> A diferencia de reactivos puros de bajo peso molecular ($H_2O, C_6H_6$), los polímeros sintéticos son mezclas estadísticas de cadenas con longitudes dispersas ($M_n, M_w$).</li>
+                <li><b>Dualidad Estructural:</b> Enlaces covalentes $\sigma$ ultra-resistentes a lo largo del esqueleto ($350-400\text{ kJ/mol}$) frente a fuerzas intermoleculares secundarias débiles ($2-40\text{ kJ/mol}$) que controlan la fluencia y solubilidad.</li>
+                <li><b>Resistencia Específica:</b> Su baja densidad ($\rho \approx 0.90 - 1.45\text{ g/cm}^3$) frente al acero ($\rho \approx 7.85\text{ g/cm}^3$) optimiza la relación resistencia mecánica/peso.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="callout-box navy">
+                <div class="callout-title">Relevancia en Planta Química</div>
+                Los polímeros proporcionan <b>inercia electroquímica absoluta</b> frente a electrolitos salinos, salmueras y ácidos no oxidantes ($HCl, H_3PO_4$), donde los aceros sufren picaduras (*pitting*) y corrosión galvánica. Son la base de tuberías para fluidos agresivos, sellos de bombas centrífugas y membranas para ósmosis inversa.
+              </div>
+              
+              <div class="callout-box crimson" style="margin-top: 15px;">
+                <div class="callout-title">Definición Formal IUPAC</div>
+                <b>Macromolécula:</b> Molécula de masa molecular relativa alta, cuya estructura comprende esencialmente la repetición múltiple de unidades derivadas, real o conceptualmente, de moléculas de baja masa molecular relativa (monómeros).
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 3: 4.2 HIDROCARBUROS Y ENLACES -->
+      <article class="slide-card" data-slide="3">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.2</span>
+          <span class="slide-ref">Callister págs. 125–127</span>
+        </div>
+        <h2 class="slide-title">4.2 Hidrocarburos: Hibridación Orbital y Simetría de Enlace</h2>
+        <p class="slide-subtitle">Fundamentos mecano-cuánticos del carbono ($1s^2 2s^2 2p^2$) y reactividad por adición</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div>
+              <div class="callout-box">
+                <div class="callout-title">Hibridación sp³ (Esqueleto Saturado)</div>
+                <ul class="academic-list" style="margin-top: 6px;">
+                  <li><b>Geometría:</b> Tetraédrica regular, ángulo interorbital $\theta = 109.47^\circ \approx 109.5^\circ$.</li>
+                  <li><b>Longitud $C-C$:</b> $d = 0.154\text{ nm}$ ($1.54\text{ \AA}$).</li>
+                  <li><b>Energía de enlace:</b> $E_{diss} \approx 348\text{ kJ/mol}$.</li>
+                  <li><b>Simetría cilíndrica axial ($\sigma$):</b> Permite la rotación torsional dependiente del potencial térmico, otorgando flexibilidad macromolecular.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Hibridación sp² (Monómeros Vinílicos Reactivos)</div>
+                <ul class="academic-list" style="margin-top: 6px;">
+                  <li><b>Geometría:</b> Trigonal plana coplanar, ángulo $\theta = 120^\circ$.</li>
+                  <li><b>Longitud $C=C$:</b> $d = 0.134\text{ nm}$ ($1.34\text{ \AA}$).</li>
+                  <li><b>Energía de enlace total:</b> $E_{diss} \approx 614\text{ kJ/mol}$ ($1\sigma + 1\pi$).</li>
+                  <li><b>Densidad electrónica $\pi$ localizada:</b> Actúa como centro nucleofílico rico en electrones, vulnerable al ataque de radicales libres iniciadores ($R^\bullet$).</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-box navy" style="margin-top: 10px;">
+            <div class="callout-title">Criterio de Saturación vs. Insaturación en Ingeniería Química</div>
+            Un hidrocarburo <b>saturado</b> (alcanos $C_n H_{2n+2}$) posee sus 4 valencias ocupadas por enlaces simples $\sigma$; no puede polimerizar sin ruptura destructiva. Un compuesto <b>insaturado</b> posee dobles ($C_n H_{2n}$) o triples enlaces ($C_n H_{2n-2}$); el enlace $\pi$ es termodinámicamente susceptible a la apertura para formar dos nuevos enlaces simples $\sigma$.
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 4: 4.2 TABLA 4.1 & ISOMERÍA -->
+      <article class="slide-card" data-slide="4">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.2</span>
+          <span class="slide-ref">Callister págs. 126–128</span>
+        </div>
+        <h2 class="slide-title">4.2 Tabla 4.1 de Callister: Parafinas, Isomería y Fuerzas de London</h2>
+        <p class="slide-subtitle">Correlación cuantitativa entre área superficial, potencial de Lennard-Jones y puntos de ebullición</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div class="figure-wrapper">
+              <span class="figure-badge">Callister Tabla 4.1</span>
+              <img src="assets/img/table_4_1_paraffins.png" alt="Tabla 4.1 Callister: Parafinas">
+              <div class="figure-caption">Tabla 4.1: Composiciones, estructuras moleculares y puntos de ebullición crecientes para la familia parafínica ($C_n H_{2n+2}$).</div>
+            </div>
+
+            <div>
+              <div class="figure-wrapper" style="margin-bottom: 12px;">
+                <span class="figure-badge">Estructuras Isómeros</span>
+                <img src="assets/img/isomers_butane.png" alt="Isómeros de Butano Callister" style="max-height: 140px;">
+                <div class="figure-caption">Comparación estructural del n-butano (lineal) vs. isobutano (ramificado).</div>
+              </div>
+
+              <div class="callout-box crimson">
+                <div class="callout-title">Fundamento Fisicoquímico: Potencial de London</div>
+                El $n$-butano hierve a <b>$-0.5^\circ\text{C}$</b> mientras que el isobutano hierve a <b>$-11.7^\circ\text{C}$</b>:<br/>
+                La molécula lineal maximiza el área de contacto interatómico. La ramificación induce una geometría esférica que reduce la superficie efectiva y aleja los centros atómicos ($r$). Dado que la energía de atracción de London decae con $r^{-6}$ ($V_{att} \propto -C/r^6$), la cohesión intermolecular colapsa en el isobutano.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 5: 4.2 TERMODINÁMICA Y TECHO -->
+      <article class="slide-card" data-slide="5">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.2</span>
+          <span class="slide-ref">Termodinámica de Polímeros</span>
+        </div>
+        <h2 class="slide-title">4.2 Termodinámica de Polimerización y Temperatura de Techo (Tc)</h2>
+        <p class="slide-subtitle">El compromiso entre la entalpía exotérmica de apertura $\pi$ y la pérdida entrópica traslacional</p>
+
+        <div class="slide-body">
+          <div class="math-block">
+            $$\Delta G_p = \Delta H_p - T \Delta S_p < 0 \quad \text{(Condición de espontaneidad)}$$
+          </div>
+
+          <div class="grid-two-cols">
+            <div>
+              <div class="callout-box">
+                <div class="callout-title">Término Entálpico ($\Delta H_p < 0$)</div>
+                La conversión de 1 enlace $C=C$ ($614\text{ kJ/mol}$) en 2 enlaces simples $C-C$ ($2 \times 348 = 696\text{ kJ/mol}$) libera un balance neto fuertemente exotérmico:
+                $$\Delta H_p \approx -82 \text{ a } -95\text{ kJ/mol de monómero}$$
+                Este término impulsa la reacción y exige un riguroso control de disipación térmica en el reactor químico para evitar embalamientos.
+              </div>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Término Entrópico ($\Delta S_p < 0$)</div>
+                La unión de miles de monómeros independientes gaseosos o líquidos en una sola macromolécula restringida destruye grados de libertad traslacionales y rotacionales:
+                $$\Delta S_p \approx -100 \text{ a } -120\text{ J/(mol}\cdot\text{K)}$$
+                El término $-T\Delta S_p$ es positivo y desestabiliza el polímero a altas temperaturas.
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-box navy" style="margin-top: 10px;">
+            <div class="callout-title">Deducción de la Temperatura de Techo (Ceiling Temperature, Tc)</div>
+            En el equilibrio termodinámico ($\Delta G_p = 0$):
+            $$0 = \Delta H_p - T_c \Delta S_p \implies T_c = \frac{\Delta H_p}{\Delta S_p}$$
+            <b>Implicación en Operaciones Unitarias:</b> Por encima de $T_c$, la velocidad de despolimerización termodinámica supera a la de polimerización. Para el poli(&alpha;-metilestireno), $T_c = 61^\circ\text{C}$; para el etileno, $T_c \approx 400^\circ\text{C}$.
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 6: 4.2 SOLUBILIDAD DE HILDEBRAND -->
+      <article class="slide-card" data-slide="6">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.2</span>
+          <span class="slide-ref">Termodinámica de Soluciones Poliméricas</span>
+        </div>
+        <h2 class="slide-title">4.2 Solubilidad de Polímeros: Hildebrand y Energía Cohesiva</h2>
+        <p class="slide-subtitle">Criterio termodinámico para predecir resistencia a solventes y disolución en plantas químicas</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div>
+              <p style="margin-bottom: 10px;">Para macromoléculas gigantes, la ganancia entrópica de mezclado ($\Delta S_{mix}$) calculada por la teoría de <b>Flory-Huggins</b> es despreciable:</p>
+              
+              <div class="math-block">
+                $$\Delta G_{mix} \approx \Delta H_{mix} \approx V_{total} \phi_1 \phi_2 (\delta_1 - \delta_2)^2$$
+              </div>
+
+              <ul class="academic-list">
+                <li><b>Densidad de Energía Cohesiva:</b> $CED = \frac{\Delta E_v}{V_m} = \frac{\Delta H_v - RT}{V_m}$</li>
+                <li><b>Parámetro de Hildebrand:</b> $\delta = \sqrt{CED} \quad [\text{MPa}^{1/2}]$</li>
+                <li><b>Criterio de Solubilidad:</b> Habrá disolución o hinchamiento si $|\delta_{solvente} - \delta_{polimero}| \to 0$.</li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Regla de Selección en Tuberías Industriales</div>
+                Si se requiere transportar un solvente aromático o polar (ej. Tolueno, $\delta = 18.2\text{ MPa}^{1/2}$ o THF, $\delta = 19.4\text{ MPa}^{1/2}$):<br/>
+                • <b>PVC ($\delta = 19.8$):</b> $|\Delta \delta| = 0.4 \implies \Delta H_{mix} \approx 0 \implies \Delta G_{mix} < 0$. Se hincha y disuelve rápidamente.<br/>
+                • <b>HDPE ($\delta = 16.2$):</b> $|\Delta \delta| = 3.2 \implies \Delta H_{mix} \gg 0 \implies \Delta G_{mix} > 0$. Insoluble; sumado a su cristalinidad, resiste el fluido.
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 7: 4.3 MOLÉCULAS DE POLÍMEROS -->
+      <article class="slide-card" data-slide="7">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.3</span>
+          <span class="slide-ref">Callister págs. 127–129</span>
+        </div>
+        <h2 class="slide-title">4.3 La Molécula Polimérica: Monómero vs. Unidad Repetitiva (Mer)</h2>
+        <p class="slide-subtitle">Arquitectura molecular y grupos funcionales precursores</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div class="figure-wrapper">
+              <span class="figure-badge">Callister Tabla 4.2</span>
+              <img src="assets/img/table_4_2_functional_groups.png" alt="Tabla 4.2 Callister: Grupos Funcionales">
+              <div class="figure-caption">Tabla 4.2: Grupos de hidrocarburos comunes (Alcoholes, Éteres, Ácidos, Aldehídos, Fenol).</div>
+            </div>
+
+            <div>
+              <div class="callout-box">
+                <div class="callout-title">Rigor Terminológico Exigido en IQ</div>
+                <p style="margin-bottom: 8px;">• <b>Monómero:</b> Molécula precursora independiente, de bajo peso molecular, con funcionalidad reactiva (ej. etileno, $H_2C=CH_2$, $M = 28.05\text{ g/mol}$).</p>
+                <p>• <b>Unidad Repetitiva (Mer):</b> Entidad constitucional mínima que se reitera a lo largo de la cadena macromolecular tras la reacción química.</p>
+              </div>
+
+              <div class="callout-box navy" style="margin-top: 12px;">
+                <div class="callout-title">Adición vs. Condensación</div>
+                En <b>polímeros de adición</b>, la estequiometría del mer es idéntica al monómero ($m_0 = M_{monomer}$). En <b>condensación</b>, el mer es menor debido a la eliminación estequiométrica de pequeñas moléculas condensadas ($H_2O, HCl, CH_3OH$).
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 8: 4.3 FIGURA 4.1 ZIGZAG -->
+      <article class="slide-card" data-slide="8">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.3</span>
+          <span class="slide-ref">Callister págs. 129–131</span>
+        </div>
+        <h2 class="slide-title">4.3 Figura 4.1 de Callister: El Esqueleto en Zig-Zag y Conformaciones</h2>
+        <p class="slide-subtitle">Demostración trigonométrica de la distancia proyectada y dinámica conformacional</p>
+
+        <div class="slide-body">
+          <div class="figure-wrapper" style="margin-bottom: 12px;">
+            <span class="figure-badge">Callister Figura 4.1</span>
+            <img src="assets/img/figure_4_1_polyethylene.png" alt="Figura 4.1 Callister: Polietileno Plano vs Zig-Zag">
+            <div class="figure-caption">Figura 4.1: (a) Representación plana esquemática del mer; (b) Perspectiva tridimensional del esqueleto en zig-zag con ángulo tetraédrico de 109.5°.</div>
+          </div>
+
+          <div class="grid-two-cols">
+            <div class="callout-box">
+              <div class="callout-title">Deducción de la Distancia Proyectada (d_proy)</div>
+              Dado que los átomos de carbono adoptan la geometría tetraédrica $sp^3$ ($\theta = 109.47^\circ$), la proyección lineal axial de cada enlace $C-C$ ($d = 0.154\text{ nm}$) es:
+              $$d_{proy} = d_{C-C} \cdot \sin\left(\frac{109.5^\circ}{2}\right) = 0.154\text{ nm} \times \sin(54.75^\circ) \approx 0.126\text{ nm}$$
+              Por lo tanto, la longitud de contorno extendido de una cadena con $N$ enlaces $C-C$ es $L = N \cdot 0.126\text{ nm}$ (y no $N \cdot 0.154\text{ nm}$).
+            </div>
+
+            <div class="callout-box crimson">
+              <div class="callout-title">Barrera Torsional: Trans vs. Gauche</div>
+              La rotación sobre el enlace $\sigma$ presenta estados conformacionales discretos:
+              • <b>Conformación trans (anti, $\phi = 180^\circ$):</b> Mínimo global de energía.<br/>
+              • <b>Conformaciones gauche ($\phi = \pm 60^\circ$):</b> Exceso energético estéreo-electrónico $\Delta E \approx 3.3 - 3.8\text{ kJ/mol}$.<br/>
+              A temperatura ambiente, $k_B T \approx 2.5\text{ kJ/mol}$ permite transiciones continuas, modelando la cadena como un <b>ovillo estadístico aleatorio</b> (*random coil* de Flory).
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 9: 4.4 CINÉTICA RADICALARIA -->
+      <article class="slide-card" data-slide="9">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.4</span>
+          <span class="slide-ref">Callister págs. 130–131</span>
+        </div>
+        <h2 class="slide-title">4.4 Polimerización por Radicales Libres: Deducción Cinética QSSA</h2>
+        <p class="slide-subtitle">Modelado cinético de iniciación, propagación y terminación bimolecular</p>
+
+        <div class="slide-body">
+          <div class="figure-wrapper" style="margin-bottom: 10px;">
+            <span class="figure-badge">Callister Ecs. (4.1) y (4.2)</span>
+            <img src="assets/img/reactions_free_radical_pe.png" alt="Reacciones de Polimerización Radicalaria Callister" style="max-height: 125px;">
+            <div class="figure-caption">Ecuaciones 4.1 y 4.2 del Callister: Formación del centro activo con iniciador $R^\bullet$ y adición sucesiva de monómeros.</div>
+          </div>
+
+          <div class="grid-two-cols">
+            <div>
+              <div class="callout-box">
+                <div class="callout-title">Etapas Cinéticas Elementales</div>
+                <p>1. <b>Iniciación:</b> $I \xrightarrow{k_d} 2R^\bullet \implies R_i = 2 f k_d [I]$</p>
+                <p>2. <b>Propagación:</b> $M_n^\bullet + M \xrightarrow{k_p} M_{n+1}^\bullet \implies R_p = k_p [M^\bullet][M]$</p>
+                <p>3. <b>Terminación:</b> $M_n^\bullet + M_m^\bullet \xrightarrow{k_t} \text{Polímero muerto} \implies R_t = 2 k_t [M^\bullet]^2$</p>
+              </div>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Hipótesis del Estado Cuasi-Estacionario (QSSA)</div>
+                Igualando velocidades de generación y destrucción de radicales ($R_i = R_t$):
+                $$2 f k_d [I] = 2 k_t [M^\bullet]^2 \implies [M^\bullet] = \sqrt{\frac{f k_d [I]}{k_t}}$$
+                Sustituyendo en la velocidad de polimerización:
+                $$R_p = k_p [M] \sqrt{\frac{f k_d [I]}{k_t}} \quad (\text{Orden 1 en } [M], \text{ Orden 0.5 en } [I])$$
+              </div>
+            </div>
+          </div>
+
+          <div class="callout-box navy" style="margin-top: 8px;">
+            <div class="callout-title">Efecto Trommsdorff-Norrish (Efecto Gel)</div>
+            A conversiones moderadas, la viscosidad aumenta drásticamente y los macro-radicales no pueden difundir para terminarse ($k_t \downarrow$ abruptamente). Sin embargo, los monómeros pequeños siguen difundiendo ($k_p \approx \text{cte}$). Según la ecuación deducida, al estar $k_t$ en el denominador, $R_p$ se autoacelera violentamente, generando un grave riesgo de <b>embalamiento térmico (*thermal runaway*)</b> en el reactor químico.
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 10: 4.4 POLICONDENSACIÓN & CAROTHERS -->
+      <article class="slide-card" data-slide="10">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.4</span>
+          <span class="slide-ref">Cinética de Crecimiento en Etapas</span>
+        </div>
+        <h2 class="slide-title">4.4 Policondensación: Deducción de la Ecuación de Carothers</h2>
+        <p class="slide-subtitle">Relación matemática estricta entre conversión fraccionaria ($p$) y masa molecular promedio</p>
+
+        <div class="slide-body">
+          <div class="callout-box">
+            <div class="callout-title">Deducción para Sistemas Bifuncionales Estequiométricos (f = 2)</div>
+            Sea $N_0$ el número inicial de moléculas cargadas al reactor. Grupos iniciales = $2 N_0$.<br/>
+            A conversión $p$, han reaccionado $2(N_0 - N)$ grupos, quedando $N$ moléculas en el medio:<br/>
+            $$p = \frac{2(N_0 - N)}{2 N_0} = \frac{N_0 - N}{N_0} \implies N = N_0 (1 - p)$$
+            El grado de polimerización promedio en número $\bar{X}_n$ es la relación moléculas iniciales / remanentes:
+            $$\bar{X}_n = \frac{N_0}{N} = \frac{1}{1 - p}$$
+          </div>
+
+          <div class="grid-two-cols" style="margin-top: 10px;">
+            <div>
+              <div class="table-responsive">
+                <table class="academic-table">
+                  <thead>
+                    <tr><th>Conversión ($p$)</th><th>$\bar{X}_n$</th><th>Estado Físico en Reactor</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>$0.50$ (50%)</td><td>$2$</td><td>Líquido de baja viscosidad (dímeros)</td></tr>
+                    <tr><td>$0.90$ (90%)</td><td>$10$</td><td>Oligómeros frágiles sin resistencia</td></tr>
+                    <tr><td>$0.98$ (98%)</td><td>$50$</td><td>Inicio de cohesión mecánica</td></tr>
+                    <tr><td>$0.99$ (99%)</td><td>$100$</td><td>Polímero comercial útil</td></tr>
+                    <tr><td>$0.999$ (99.9%)</td><td>$1000$</td><td>Altas prestaciones estructurales</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Consecuencia de Diseño para el Ingeniero Químico</div>
+                Para alcanzar $\bar{X}_n > 100$, es indispensable alcanzar conversiones $p > 0.99$. Esto exige dos condiciones en planta:<br/>
+                1. <b>Equimolaridad perfecta</b> de reactivos ($r = N_A / N_B \approx 1.000$).<br/>
+                2. <b>Desvolatilización a alto vacío</b> para remover continuamente el agua condensada ($H_2O$) y desplazar el equilibrio químico (Principio de Le Chatelier).
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 11: 4.4 PUNTO DE GEL DE CAROTHERS -->
+      <article class="slide-card" data-slide="11">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.4</span>
+          <span class="slide-ref">Redes Tridimensionales y Termoestables</span>
+        </div>
+        <h2 class="slide-title">4.4 Funcionalidad Monomérica y Punto Crítico de Gel (pc)</h2>
+        <p class="slide-subtitle">Transición reológica a viscosidad infinita en la formación de redes tridimensionales</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div>
+              <p style="margin-bottom: 10px;">La <b>funcionalidad ($f$)</b> es el número de enlaces covalentes que un monómero puede formar:</p>
+              <ul class="academic-list">
+                <li><b>Bifuncionales ($f = 2$):</b> Conducen exclusivamente a cadenas lineales o anillos solubles/fusibles (termoplásticos).</li>
+                <li><b>Polifuncionales ($f \ge 3$):</b> Introducen puntos de ramificación tridimensional que pueden conectarse en una red infinita (termoestables).</li>
+              </ul>
+
+              <div class="callout-box" style="margin-top: 15px;">
+                <div class="callout-title">Funcionalidad Promedio Ponderada</div>
+                $$f_{prom} = \frac{\sum N_i f_i}{\sum N_i}$$
+              </div>
+            </div>
+
+            <div>
+              <div class="callout-box crimson">
+                <div class="callout-title">Deducción del Punto de Gel de Carothers (pc)</div>
+                Número inicial de grupos = $N_0 \cdot f_{prom}$. Tras reaccionar a conversión $p$ restan $N$ moléculas:<br/>
+                $$\bar{X}_n = \frac{2}{2 - p \cdot f_{prom}}$$
+                El punto de gelificación teórico ocurre cuando una molécula alcanza tamaño macroscópico infinito ($\bar{X}_n \to \infty$):
+                $$2 - p_c \cdot f_{prom} = 0 \implies p_c = \frac{2}{f_{prom}}$$
+              </div>
+
+              <div class="callout-box navy" style="margin-top: 12px;">
+                <div class="callout-title">Discontinuidad Reológica en Planta</div>
+                En $p_c$, la viscosidad salta discontinuamente a infinito ($\eta \to \infty$). El medio pierde fluidez de golpe. Todo reactor batch debe detenerse antes de $p_c$ o moldearse la pieza *in-situ* (moldeo RIM).
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 12: 4.4 FIGURA 4.2 CALLISTER -->
+      <article class="slide-card" data-slide="12">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.4</span>
+          <span class="slide-ref">Callister págs. 131–132</span>
+        </div>
+        <h2 class="slide-title">4.4 Figura 4.2 de Callister: Influencia Estérica y Grupos Colgantes</h2>
+        <p class="slide-subtitle">Comparativa estructural entre PTFE, PVC y Polipropileno</p>
+
+        <div class="slide-body">
+          <div class="figure-wrapper" style="margin-bottom: 12px;">
+            <span class="figure-badge">Callister Figura 4.2</span>
+            <img src="assets/img/figure_4_2_ptfe_pvc_pp.png" alt="Figura 4.2 Callister: PTFE, PVC, PP">
+            <div class="figure-caption">Figura 4.2: Unidad repetitiva y estructura de cadenas de (a) Politetrafluoroetileno (PTFE), (b) Poli(cloruro de vinilo) (PVC) y (c) Polipropileno (PP).</div>
+          </div>
+
+          <div class="grid-two-cols">
+            <div class="callout-box">
+              <div class="callout-title">PTFE / Teflón: Apantallamiento del Flúor</div>
+              Los átomos de flúor (radio de Van der Waals $1.47\text{ \AA}$) son mayores que el hidrógeno ($1.20\text{ \AA}$). Al rodear al esqueleto $C-C$, la repulsión estérica bloquea la torsión y fuerza a la molécula a adoptar una varilla helicoidal cilíndrica impenetrable. Esta rigidez extrema hace que la entropía de fusión ($\Delta S_m$) sea diminuta, elevando su punto de fusión a un valor récord de <b>$T_m = 327^\circ\text{C}$</b>.
+            </div>
+
+            <div class="callout-box crimson">
+              <div class="callout-title">PVC & PP: Polaridad y Asimetría</div>
+              • <b>PVC:</b> El enlace $C-Cl$ genera un dipolo permanente severo, elevando su cohesión interna ($T_g = 87^\circ\text{C}$) y dotándolo de resistencia inherente a la flama.<br/>
+              • <b>PP:</b> El grupo $-\text{CH}_3$ colgante induce asimetría estérica. Dependiendo de cómo se oriente en el espacio, dará origen a la <b>tacticidad</b> (isotáctico cristalino vs atáctico amorfo gomoso).
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 13: 4.4 TABLA 4.3 CALLISTER -->
+      <article class="slide-card" data-slide="13">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Subtema 4.4</span>
+          <span class="slide-ref">Callister págs. 132–133</span>
+        </div>
+        <h2 class="slide-title">4.4 Tabla 4.3 de Callister: Los 10 Polímeros Fundamentales</h2>
+        <p class="slide-subtitle">Catálogo estructural y propiedades fisicoquímicas clave</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols" style="margin-bottom: 10px;">
+            <div class="figure-wrapper">
+              <span class="figure-badge">Callister Tabla 4.3 (Parte 1)</span>
+              <img src="assets/img/table_4_3_part1.png" alt="Tabla 4.3 Parte 1 Callister">
+              <div class="figure-caption">PE, PVC, PTFE, PP y PS.</div>
+            </div>
+
+            <div class="figure-wrapper">
+              <span class="figure-badge">Callister Tabla 4.3 (Parte 2)</span>
+              <img src="assets/img/table_4_3_part2.png" alt="Tabla 4.3 Parte 2 Callister">
+              <div class="figure-caption">PMMA, Baquelita, Nylon 6,6, PET y Policarbonato.</div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="academic-table">
+              <thead>
+                <tr>
+                  <th>Polímero</th><th>Fórmula Mer</th><th>$m_0$ (g/mol)</th><th>Fuerzas Dominantes</th><th>$T_g$ / $T_m$ (°C)</th><th>Aplicación Crítica en Procesos</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><b>PE</b></td><td><code>[-CH2-CH2-]</code></td><td>28.05</td><td>London apolares</td><td>-110 / 135</td><td>Tuberías de gas/agua a presión y geomembranas</td></tr>
+                <tr><td><b>PVC</b></td><td><code>[-CH2-CH(Cl)-]</code></td><td>62.50</td><td>Dipolo-dipolo fuerte</td><td>87 / 212(d)</td><td>Conducción de ácidos concentrados ($HCl$)</td></tr>
+                <tr><td><b>PTFE</b></td><td><code>[-CF2-CF2-]</code></td><td>100.02</td><td>Apantallamiento flúor</td><td>-97 / 327</td><td>Empaquetaduras y sellos criogénicos</td></tr>
+                <tr><td><b>Nylon 6,6</b></td><td><code>[-NH(CH2)6NH-CO(CH2)4CO-]</code></td><td>226.32</td><td>Puentes de H densos</td><td>50 / 265</td><td>Telas filtrantes y engranajes autolubricados</td></tr>
+                <tr><td><b>Baquelita</b></td><td>Red fenólica-metileno</td><td>Red</td><td>Enlaces covalentes 3D</td><td>No funde</td><td>Aislantes termoeléctricos y pastillas de freno</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 14: CASOS DE CÁLCULO NUMÉRICO -->
+      <article class="slide-card" data-slide="14">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Cálculo Numérico Riguroso</span>
+          <span class="slide-ref">Problemas de Examen IQ</span>
+        </div>
+        <h2 class="slide-title">Ejercicios Numéricos Resueltos Paso a Paso</h2>
+        <p class="slide-subtitle">Balances estequiométricos, cinéticos y termodinámicos de Ingeniería Química</p>
+
+        <div class="slide-body">
+          <div class="grid-two-cols">
+            <div class="callout-box">
+              <div class="callout-title">Problema 1: Punto de Gel en Resina Alquídica</div>
+              <b>Carga:</b> 2.0 moles de anhídrido ftálico ($f_A = 2$) + 1.0 mol de glicerol ($f_B = 3$).<br/>
+              1. <i>Total equivalentes:</i> $E_0 = (2 \times 2) + (1 \times 3) = 7.0\text{ eq}$.<br/>
+              2. <i>Funcionalidad media:</i> $f_{prom} = \frac{7.0}{3.0} \approx 2.333$.<br/>
+              3. <i>Punto de gel de Carothers:</i>
+              $$p_c = \frac{2}{f_{prom}} = \frac{2}{7/3} = \frac{6}{7} \approx \mathbf{0.8571 \ (85.71\%)}$$
+              <b>Dictamen:</b> Al 85.71% de avance, la viscosidad salta a infinito. El calentamiento debe apagarse al 80% para evitar el bloqueo del agitador.
+            </div>
+
+            <div class="callout-box crimson">
+              <div class="callout-title">Problema 2: Cinética CSTR de Poliestireno</div>
+              A $60^\circ\text{C}$: $[M] = 8.5\text{ M}$, $[I] = 0.040\text{ M}$, $k_d = 3.2\times 10^{-6}\text{ s}^{-1}$, $f = 0.60$, $k_p = 176$, $k_t = 3.6\times 10^7\text{ L/(mol}\cdot\text{s)}$.<br/>
+              1. <i>Radicales QSSA:</i>
+              $$[M^\bullet] = \sqrt{\frac{0.60 \times 3.2\times 10^{-6} \times 0.040}{3.6\times 10^7}} \approx \mathbf{4.62 \times 10^{-8}\text{ M}}$$
+              2. <i>Velocidad $R_p$:</i>
+              $$R_p = 176 \times 4.62\times 10^{-8} \times 8.5 \approx \mathbf{6.91 \times 10^{-5}\text{ mol/(L}\cdot\text{s)}}$$
+              3. <i>Longitud cinética y peso:</i> $\nu = 450$. Por combinación: $\bar{X}_n = 2\nu = 900 \implies \bar{M}_n = 900 \times 104.15 = \mathbf{93,735\text{ g/mol}}$.
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- SLIDE 15: DEFENSA CONCEPTUAL ANTE EL PROFESOR -->
+      <article class="slide-card" data-slide="15">
+        <div class="slide-top-meta">
+          <span class="slide-tag">Defensa Conceptual</span>
+          <span class="slide-ref">Cuestionario Examen Oral</span>
+        </div>
+        <h2 class="slide-title">Preguntas Trampa Típicas de Profesores Exigentes</h2>
+        <p class="slide-subtitle">Argumentaciones analíticas para responder con máxima solvencia</p>
+
+        <div class="slide-body">
+          <div class="callout-box navy">
+            <div class="callout-title">1. ¿Por qué en adición hay altos pesos moleculares a conversión < 1%, pero en condensación al 90% el producto es inútil?</div>
+            En adición (radicales), $k_p$ es tan grande ($\sim 10^3\text{ L/(mol}\cdot\text{s)}$) que una vez iniciado, el radical adiciona miles de monómeros en milisegundos antes de terminar. A conversión baja coexisten monómeros intactos y cadenas gigantes muertas. En condensación, todos los grupos tienen igual reactividad (Principio de Flory); al inicio solo se forman dímeros y trímeros. Para alcanzar macromoléculas ($\bar{X}_n > 100$), estadísticamente se requiere agotar más del 99% de los grupos ($p > 0.99$ según Carothers).
+          </div>
+
+          <div class="callout-box crimson" style="margin-top: 10px;">
+            <div class="callout-title">2. ¿Por qué el PTFE funde a 327 °C si sus fuerzas de London entre cadenas fluoradas son débiles?</div>
+            El tamaño del flúor apantalla totalmente al esqueleto $C-C$ forzándolo a una varilla helicoidal rígida. Esta rigidez anula los grados de libertad conformacionales en el fundido, resultando en una entropía de fusión anormalmente baja ($\Delta S_m \approx 0$). De la relación termodinámica clásica $T_m = \frac{\Delta H_m}{\Delta S_m}$, al ser $\Delta S_m$ casi nula, $T_m$ diverge a $327^\circ\text{C}$.
+          </div>
+
+          <div class="callout-box" style="margin-top: 10px;">
+            <div class="callout-title">3. ¿Qué es el efecto Trommsdorff y por qué puede romper un reactor?</div>
+            Al aumentar la viscosidad, los macro-radicales se enredan y se frena su difusión, colapsando $k_t$ en varios órdenes de magnitud. El monómero pequeño sigue difundiendo ($k_p \approx \text{cte}$). Por la ley $R_p \propto k_t^{-1/2}$, la reacción se autoacelera bruscamente liberando $\Delta H_p \approx -85\text{ kJ/mol}$, provocando un **embalamiento térmico** y sobrepresión si no se refrigera de emergencia.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Footer -->
+  <footer class="app-footer">
+    <div class="nav-hint">
+      Usa <kbd>←</kbd> <kbd>→</kbd> en teclado o <b>desliza</b> en móvil
+    </div>
+
+    <div class="nav-buttons">
+      <button id="btn-prev" class="btn-nav" disabled>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+        <span>Anterior</span>
+      </button>
+
+      <div id="slide-counter" class="slide-counter">01 / 15</div>
+
+      <button id="btn-next" class="btn-nav">
+        <span>Siguiente</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for High-Resolution Image Inspection -->
+  <div id="lightbox-modal" class="lightbox-modal">
+    <div class="lightbox-content">
+      <button id="btn-close-lightbox" class="btn-close-lightbox">&times;</button>
+      <img id="lightbox-img" src="" alt="Ampliación Figura Callister">
+      <div id="lightbox-caption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- Slideshow Engine Script -->
+  <script src="script.js"></script>
+</body>
+</html>

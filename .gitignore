@@ -1,0 +1,8 @@
+# Archivo pesado de libro original (evitar inflar el repo y temas de copyright)
+fundamentos_Ingenieria_materiales.pdf
+
+# Python y caché
+__pycache__/
+*.pyc
+.venv/
+.env
