@@ -1,6 +1,9 @@
 # Presentación Académica: Estructura, Termodinámica y Cinética de Polímeros
 ## Subtemas 4.1 a 4.4 de W.D. Callister | Enfoque Riguroso para Ingeniería Química
 
+🔗 **Sitio web en vivo (optimizado para celular):**  
+[https://mgueldiaz10-oss.github.io/materiales-polimeros/](https://mgueldiaz10-oss.github.io/materiales-polimeros/)
+
 Esta aplicación web es una presentación interactiva de diapositivas en estilo **Harvard Minimalist**, diseñada para estudiar y exponer los fundamentos macromoleculares con el más alto rigor analítico y fisicoquímico. Está 100% optimizada para dispositivos móviles (gestos táctiles de deslizamiento) y computadoras de escritorio.
 
 ---
