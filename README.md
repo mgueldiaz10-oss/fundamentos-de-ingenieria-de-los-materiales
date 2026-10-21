@@ -2,7 +2,7 @@
 ## Subtemas 4.1 a 4.4 de W.D. Callister | Enfoque Riguroso para Ingeniería Química
 
 🔗 **Sitio web en vivo (optimizado para celular):**  
-[https://mgueldiaz10-oss.github.io/materiales-polimeros/](https://mgueldiaz10-oss.github.io/materiales-polimeros/)
+[https://mgueldiaz10-oss.github.io/fundamentos-de-ingenieria-de-los-materiales/](https://mgueldiaz10-oss.github.io/fundamentos-de-ingenieria-de-los-materiales/)
 
 Esta aplicación web es una presentación interactiva de diapositivas en estilo **Harvard Minimalist**, diseñada para estudiar y exponer los fundamentos macromoleculares con el más alto rigor analítico y fisicoquímico. Está 100% optimizada para dispositivos móviles (gestos táctiles de deslizamiento) y computadoras de escritorio.
 
@@ -41,10 +41,10 @@ Y abrir `http://localhost:8000` en tu navegador.
 
 ### Guía para Subir a tu GitHub Personal y Publicarlo en GitHub Pages
 
-Para tenerlo disponible en tu teléfono mediante un enlace web público (`https://tu-usuario.github.io/materiales-polimeros`):
+Para tenerlo disponible en tu teléfono mediante un enlace web público (`https://tu-usuario.github.io/fundamentos-de-ingenieria-de-los-materiales`):
 
 1. **Crea un repositorio en GitHub:**
-   - Entra a [github.com/new](https://github.com/new) y crea un nuevo repositorio público (por ejemplo, `materiales-polimeros`).
+   - Entra a [github.com/new](https://github.com/new) y crea un nuevo repositorio público (por ejemplo, `fundamentos-de-ingenieria-de-los-materiales`).
 
 2. **Sube los archivos desde tu terminal:**
    Abre una terminal PowerShell en esta carpeta (`c:\Users\madia\Documents\antigravity\MATERIALES`) y ejecuta:
@@ -54,7 +54,7 @@ Para tenerlo disponible en tu teléfono mediante un enlace web público (`https:
    git add .
    git commit -m "Presentación Harvard Minimalist Polímeros Callister 4.1-4.4"
    git branch -M main
-   git remote add origin https://github.com/TU_USUARIO/materiales-polimeros.git
+   git remote add origin https://github.com/TU_USUARIO/fundamentos-de-ingenieria-de-los-materiales.git
    git push -u origin main
    ```
 
