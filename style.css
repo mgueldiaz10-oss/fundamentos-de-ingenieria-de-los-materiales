@@ -737,3 +737,127 @@ body.scroll-mode .app-footer {
     padding: 0 12px;
   }
 }
+
+/* ==========================================================================
+   FORMAL INSTITUTIONAL COVER SLIDE STYLING
+   ========================================================================== */
+.cover-slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 12px 0;
+}
+
+.cover-header-group {
+  margin-bottom: 24px;
+  max-width: 800px;
+}
+
+.cover-institution-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--harvard-crimson-light);
+  border: 1px solid var(--harvard-crimson-border);
+  color: var(--harvard-crimson);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.cover-main-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.cover-main-subtitle {
+  font-size: 15px;
+  color: var(--slate-subtle);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.cover-divider {
+  width: 72px;
+  height: 3px;
+  background-color: var(--harvard-crimson);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.cover-metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  width: 100%;
+  max-width: 780px;
+  margin: 0 auto 20px auto;
+  text-align: left;
+}
+
+@media (min-width: 680px) {
+  .cover-metadata-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cover-card {
+  background-color: var(--bg-card-subtle);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--harvard-crimson);
+  border-radius: 6px;
+  padding: 12px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.cover-card.navy-border {
+  border-left-color: var(--navy-deep);
+}
+
+.cover-card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--harvard-crimson);
+  margin-bottom: 3px;
+}
+
+.cover-card.navy-border .cover-card-label {
+  color: var(--slate-subtle);
+}
+
+.cover-card-value {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy-deep);
+  line-height: 1.3;
+}
+
+.cover-card-sub {
+  font-size: 12px;
+  color: var(--slate-subtle);
+  margin-top: 2px;
+}
+
+.cover-footer-date {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
