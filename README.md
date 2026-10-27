@@ -10,16 +10,16 @@ Esta aplicación web es una presentación interactiva de diapositivas en estilo 
 
 ### Características Principales
 
+- **Capítulo 4 Completo en 30 Diapositivas:** Cobertura exhaustiva de los 12 subtemas (4.1 a 4.12) de W.D. Callister, diseñada para una clase magistral y preparación de examen de 90 minutos (hora y media).
 - **Estilo Editorial Harvard Minimalist:** Tipografía académica refinada (*Playfair Display*, *Inter*, *JetBrains Mono*), paleta cromática sobria (*Harvard Crimson* `#A51C30`, azul pizarra y fondo marfil), libre de distracciones.
-- **Figuras y Tablas Originales del Callister en Alta Resolución:**
-  - **Tabla 4.1:** Parafinas y puntos de ebullición.
-  - **Isómeros de Butano:** $n$-butano lineal vs. isobutano globular.
-  - **Tabla 4.2:** Grupos funcionales orgánicos.
-  - **Figura 4.1:** Cadena de polietileno plana vs. perspectiva tridimensional en zig-zag ($109.5^\circ$, $0.154\text{ nm}$).
-  - **Reacciones 4.1 y 4.2:** Iniciación térmica y propagación por radicales libres.
-  - **Figura 4.2:** Cadenas de PTFE (apantallamiento del flúor), PVC (dipolo polar) y PP (asimetría del metilo).
-  - **Tabla 4.3 (Partes 1 y 2):** Los 10 polímeros de ingeniería más comunes.
-- **Tipografía Matemática KaTeX:** Renderizado nítido de ecuaciones cinéticas, balances de materia y deducciones termodinámicas.
+- **Todas las Figuras y Tablas Originales del Callister en Alta Resolución (216 DPI):**
+  - **Bloque 1 (4.1 - 4.4):** Tablas 4.1, 4.2 y 4.3 (Partes 1 y 2); Figuras 4.1 (PE zig-zag) y 4.2 (PTFE, PVC, PP); Reacciones 4.1 y 4.2 (iniciación y propagación).
+  - **Bloque 2 (4.5 - 4.12):** Figura 4.3 (curvas de distribución $M_n$ vs $M_w$); Figura 4.4 (resistencia vs peso molecular); Tabla 4.4 (cálculo de PVC); Figura 4.5 (cono de rotación C-C); Figura 4.6 (ovillo aleatorio y distancia $r$); Figura 4.7 (lineal, ramificado, entrecruzado, red 3D); Diagramas de Tacticidad (isotáctico, sindiotáctico, atáctico); Isómeros cis/trans de isopreno (caucho vs gutapercha); Figura 4.8 (taxonomía); Figura 4.9 (copolímeros); Tabla 4.5 (elastómeros); Figura 4.10 (celda ortorrómbica de PE); Figura 4.11 (TEM monocristal); Figura 4.12 (láminas plegadas); Figura 4.13 (esferulita); Figura 4.14 (Cruz de Malta bajo luz polarizada).
+- **Documentos PDF de Estudio y Alimento para NotebookLM:**
+  - `Fundamentos_Completos_Polimeros_Cap4_IQ.pdf`: Compendio maestro unificado de 15 páginas.
+  - `Modulo_1_Polimeros_Estructura_Quimica_IQ.pdf`: Subtemas 4.1 a 4.4 (8 páginas).
+  - `Modulo_2_Polimeros_Pesos_Estructura_Cristalinidad_IQ.pdf`: Subtemas 4.5 a 4.12 (7 páginas).
+- **Guía de Podcasts y Guion de 90 Minutos:** `PROMPTS_PODCAST_NOTEBOOKLM_POLIMEROS.md` con el prompt listo para generar el Audio Overview de 2 locutores en NotebookLM y cronograma de clase minuto a minuto.
 - **Controles Móviles Táctiles:** Desliza el dedo horizontalmente (*swipe*) para cambiar de diapositiva.
 - **Selector de Vista Dual:**
   - *Modo Presentación:* Navegación diapositiva por diapositiva.
