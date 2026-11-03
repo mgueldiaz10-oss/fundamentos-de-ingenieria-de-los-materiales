@@ -200,6 +200,17 @@ document.addEventListener('DOMContentLoaded', () => {
   closeDrawerBtn.addEventListener('click', closeDrawer);
   drawerBackdrop.addEventListener('click', closeDrawer);
 
+  const audioBtn = document.getElementById('btn-audio-header');
+  const drawerAudioPlayer = document.getElementById('drawer-audio-player');
+  if (audioBtn && drawerAudioPlayer) {
+    audioBtn.addEventListener('click', () => {
+      openDrawer();
+      if (drawerAudioPlayer.paused) {
+        drawerAudioPlayer.play().catch(() => {});
+      }
+    });
+  }
+
   // Lightbox Actions
   function openLightbox(src, caption) {
     lightboxImg.src = src;
